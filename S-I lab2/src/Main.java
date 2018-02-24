@@ -1,24 +1,28 @@
+
 public class Main {
 
 
     public static void main (String[] args){
 
         System.out.println("HELLO");
+       /* People p = new People("Alex","Cobra","Chisinau",13);
+        p.speak("");*/
 
-        People p = new People("Alex","Cobra","Chisinau",13);
+//        System.out.println(p);
 
-        p.speak("");
+        //Doctros
 
-        System.out.println(p);
+        Dantist d = new Dantist("Dandy","Mandy", "Chisinau", 40, "Dantist", 1200, 10);
 
-        Doctor house = new Doctor("Feodor","Zelensky","Chisinau",45,"Dantist",10500,0);
+        d.TreatTeeth("");
 
-        house.diagnos("");
-        house.heal("");
-        house.operation("");
-        house.pain("");
-        house.recuperate("");
+        Hirurg h = new Hirurg("Luky","Cmoky", "Chisinau", 45, "Hyrurg", 1000, 8);
 
+        h.TreatArm("");
+
+        LOR l = new LOR ("John","MIller", "Chisinau", 35, "LOR", 8000, 6);
+
+        l.treatEar("");
     }
 
 }
