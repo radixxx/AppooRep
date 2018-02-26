@@ -12,5 +12,12 @@ public class Doctor extends People  {
         this.rank = rank;
     }
 
-
+    @Override
+    public String toString() {
+        return "Doctor{" +
+                "profil='" + profil + '\'' +
+                ", salary=" + salary +
+                ", rank=" + rank +
+                '}';
+    }
 }

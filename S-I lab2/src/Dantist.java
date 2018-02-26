@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Dantist extends Doctor implements TreatTeeth  {
 
@@ -6,14 +7,37 @@ public class Dantist extends Doctor implements TreatTeeth  {
         super(name, lastname, city, age, profil, salary, rank);
     }
 
-//    Dantist d = new Dantist("Dandy","Mandy", "Chisinau", 40, "Dantist", 1200, 10);
-
 
     @Override
-    public void TreatTeeth(String t) {
+    public String TreatTeeth(String t) {
 
-        System.out.println("Выдечить зуб");
+        int num;
+        String currentpain;
 
+        System.out.println("Что у  вас болит: ?");
+        System.out.println("\t1: Все зубы \n" +
+                "\t2: Мне нужна пломба\n" +
+                "\t3: Мне нужен новый зуб\n"
+        );
 
+        Scanner in = new Scanner(System.in);
+        num = in.nextInt();
+
+        switch (num) {
+            case 1:
+                currentpain = "Все зубы";
+                break;
+            case 2:
+                currentpain = " Мне нужна пломба";
+                break;
+            case 3:
+                currentpain = " Мне нужен новый зуб";
+                break;
+            default:
+                currentpain = "Invalid !";
+                break;
+        }
+        System.out.println(t + currentpain);
+        return t + currentpain;
     }
 }

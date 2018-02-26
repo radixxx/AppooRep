@@ -53,13 +53,6 @@ public class People {
     }
 
 
-    @Override
-    public String toString() {
-        return "People{" +
-                "name='" + name + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", city='" + city + '\'' +
-                ", age=" + age +
-                '}';
-    }
+
+
 }
