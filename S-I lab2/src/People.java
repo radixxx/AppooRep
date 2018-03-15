@@ -1,6 +1,5 @@
 public class People {
 
-
     private String name;
     private String lastname;
     private String city;
@@ -51,8 +50,5 @@ public class People {
         System.out.println("Hello.Im the man!");
 
     }
-
-
-
 
 }
