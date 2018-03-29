@@ -3,7 +3,12 @@ import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args){
+
+        System.out.println("-------------");
+        System.out.println("OOP Practice");
+        System.out.println("-------------");
         System.out.println("\t\t Welcome to Clinic -|- San Hose -|- \n");
+
 
         Hospital hospital = new Hospital();
         hospital.addDoctor("toothache",new Doctor("Feodor","Zelensky","Chisinau",45,"Dantist",10500,0) );
