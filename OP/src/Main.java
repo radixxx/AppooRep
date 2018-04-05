@@ -2,6 +2,10 @@ public class Main {
     
     public static void main (String args[]){
 
+        System.out.println("---------------");
+        System.out.println("Open/Close Principal");
+        System.out.println("---------------");
+
         RemoteControl remoteControl = RemoteControl.getInstance();
 
         TV tv = new TV(1,DeviceType.TV);
@@ -18,7 +22,7 @@ public class Main {
         remoteControl.connectToDevice(srs);
         srs.turnOn();
         srs.turnOff();
-        
+
     }
 
 }
