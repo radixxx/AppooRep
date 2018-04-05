@@ -4,22 +4,21 @@ public class Main {
 
         RemoteControl remoteControl = RemoteControl.getInstance();
 
-        TV tv = new TV();
+        TV tv = new TV(1,DeviceType.TV);
         remoteControl.connectToDevice(tv);
         tv.turnOn();
         tv.turnOff();
 
-        Projector PR = new Projector();
-        remoteControl.connectToDevice(PR);
-        PR.turnOn();
-        PR.turnOff();
+        Projector pr = new Projector(2,DeviceType.Projector);
+        remoteControl.connectToDevice(pr);
+        pr.turnOn();
+        pr.turnOff();
 
-        SurroundSoundSystem SRS = new SurroundSoundSystem();
-        remoteControl.connectToDevice(SRS);
-        SRS.turnOn();
-        SRS.turnOff();
-
-
+        SurroundSoundSystem srs = new SurroundSoundSystem(3,DeviceType.SurroundSoundSystem);
+        remoteControl.connectToDevice(srs);
+        srs.turnOn();
+        srs.turnOff();
+        
     }
 
 }

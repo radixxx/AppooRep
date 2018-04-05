@@ -1,4 +1,8 @@
-public class TV implements IDevice {
+public class TV extends Device implements IDevice {
+
+    public TV(int id, DeviceType type) {
+        super(id, type);
+    }
 
     @Override
     public void turnOn() {
@@ -10,14 +14,13 @@ public class TV implements IDevice {
         turnOnTVAlarm();
     }
 
-    // below are additional steps that may be required for you to operate your
-    // device
+
     private void SwitchToFavoriteChannel() {
         System.out.println("Switched to your favorite Channel");
     }
 
     private void turnOnTVAlarm() {
-        System.out.println("TV Alarm set for you to wake up in the morning");
+        System.out.println("TV Alarm set! Hike at 6:00 AM");
     }
 
     public String toString() {

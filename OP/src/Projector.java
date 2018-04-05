@@ -1,4 +1,8 @@
-public class Projector implements IDevice {
+public class Projector extends Device implements IDevice {
+
+    public Projector(int id, DeviceType type) {
+        super(id, type);
+    }
 
     @Override
     public void turnOn() {
@@ -10,7 +14,6 @@ public class Projector implements IDevice {
         pullDownProjectorScreen();
     }
 
-    // below are additional steps that may be required for you to operate your device
     private void pullDownProjectorScreen(){
         System.out.println("Screen has been lowered for viewing");
     }

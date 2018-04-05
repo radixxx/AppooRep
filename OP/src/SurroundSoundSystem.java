@@ -1,20 +1,24 @@
-public class SurroundSoundSystem implements IDevice {
+public class SurroundSoundSystem extends Device implements IDevice {
 
+
+    public SurroundSoundSystem(int id, DeviceType type) {
+        super(id, type);
+    }
 
     @Override
     public void turnOn() {
-        // TODO Auto-generated method stub
+
         switchToFavoriteCD();
         increaseVolume();
     }
 
     @Override
     public void turnOff() {
-        // TODO Auto-generated method stub
-        lowerVolume();
+
+        decreaseVolume();
     }
 
-    // below are additional steps that are specific to the device
+
     private void increaseVolume() {
         System.out.println("Volume has increased to a comfortable level on startup");
     }
@@ -23,8 +27,8 @@ public class SurroundSoundSystem implements IDevice {
         System.out.println("Red Hot Chili Papers now playing");
     }
 
-    private void lowerVolume() {
-        System.out.println("Lowering surround sound volume before closeing system");
+    private void decreaseVolume() {
+        System.out.println("Lowering sound volume before closeing system <<Sleep!>>");
     }
 
     public String toString() {
