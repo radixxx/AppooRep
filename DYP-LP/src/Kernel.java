@@ -1,4 +1,4 @@
-public class Kernel implements IModulesUnix,IModulesAndroid {
+public class Kernel implements IKernel {
 
     private String naming;
     private int year;
@@ -6,20 +6,17 @@ public class Kernel implements IModulesUnix,IModulesAndroid {
     private String cpu;
     private String ram;
     private int speed;
-    private String UnixKernel;
-    private String UnixAndroid;
-
+    private Type kernelType;
 
     public Kernel(String naming, int year, double version, String cpu, String ram,
-                  int speed, String unixKernel,String unixAndroid) {
+                  int speed, Type kernelType) {
         this.naming = naming;
         this.year = year;
         this.version = version;
         this.cpu = cpu;
         this.ram = ram;
         this.speed = speed;
-        UnixKernel = unixKernel;
-        UnixAndroid = unixAndroid;
+        this.kernelType = kernelType;
     }
 
 
@@ -32,20 +29,17 @@ public class Kernel implements IModulesUnix,IModulesAndroid {
                 ", cpu='" + cpu + '\'' +
                 ", ram='" + ram + '\'' +
                 ", speed=" + speed +
-                ", UnixKernel" + UnixKernel + '\'' +
-                ", UnixAndroid" + UnixAndroid + '\'';
+                ", type" + kernelType + '\'';
     }
 
     @Override
-    public String UnixKernel() {
-        System.out.println("Compatible with + UnixKernel" + UnixKernel);
-        return UnixKernel;
+    public String compatibility() {
+        System.out.println("Compatible with " + kernelType.name());
+        return null;
     }
 
     @Override
-    public String UnixAndroid() {
-        System.out.println("Compatible with + UnixAndroid" + UnixAndroid);
-        return  UnixAndroid;
+    public Type getKernelType() {
+        return kernelType;
     }
-
 }

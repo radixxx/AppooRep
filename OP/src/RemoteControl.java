@@ -1,4 +1,4 @@
-public class RemoteControl {
+public class RemoteControl implements IDevice {
 
     private IDevice device = null;
     private static final RemoteControl instance = new RemoteControl();
@@ -18,5 +18,24 @@ public class RemoteControl {
 
     public void clickOffButon() {
         this.device.turnOff();
+    }
+
+    @Override
+    public void turnOn() {
+
+
+    }
+
+    @Override
+    public void turnOff() {
+
+
+    }
+
+    @Override
+    public void click() {
+
+
+
     }
 }

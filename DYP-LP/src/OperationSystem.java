@@ -1,18 +1,22 @@
-public class OperationSystem  {
+public abstract class OperationSystem  {
 
+    private IKernel kernel;
     NameOS nameOS;
-    Type typeKernel;
     int year;
+    protected Type[] supportedTypes;
 
-    public OperationSystem(NameOS nameOS, Type typeKernel, int year) {
-        this.nameOS = nameOS;
-        this.typeKernel = typeKernel;
-        this.year = year;
+    public OperationSystem(NameOS nameOS, IKernel kernel, int year) {
+
+            this.nameOS = nameOS;
+            this.kernel = kernel;
+            this.year = year;
     }
+
+
 
     @Override
     public String toString() {
-        return "OperationSystem: " + nameOS + " typeKernel=> " + typeKernel + " year: " + year;
+        return "OperationSystem: " + nameOS + " typeKernel=> " + kernel.getKernelType() + " year: " + year;
     }
 }
 
@@ -29,6 +33,5 @@ enum NameOS {
     Ubuntu,
     Mint,
     Android,
-    Windows
 
 }

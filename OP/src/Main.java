@@ -22,6 +22,8 @@ public class Main {
         remoteControl.connectToDevice(srs);
         srs.turnOn();
         srs.turnOff();
+        srs.click();
+
 
     }
 

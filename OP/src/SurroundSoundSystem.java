@@ -18,6 +18,10 @@ public class SurroundSoundSystem extends Device implements IDevice {
         decreaseVolume();
     }
 
+    @Override
+    public void click() {
+
+    }
 
     private void increaseVolume() {
         System.out.println("Volume has increased to a comfortable level on startup");

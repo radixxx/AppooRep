@@ -14,6 +14,11 @@ public class TV extends Device implements IDevice {
         turnOnTVAlarm();
     }
 
+    @Override
+    public void click() {
+
+    }
+
 
     private void SwitchToFavoriteChannel() {
         System.out.println("Switched to your favorite Channel");
@@ -26,4 +31,5 @@ public class TV extends Device implements IDevice {
     public String toString() {
         return "Television";
     }
+
 }

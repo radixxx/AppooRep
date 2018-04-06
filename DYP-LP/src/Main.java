@@ -9,49 +9,34 @@ public class Main {
         System.out.println("DYP-LP");
         System.out.println("--------");
 
-        Kernel K = new Kernel("Unix", 2007, 12.3, "intel", "DDR3",2000, "", "");
-
-        K.UnixKernel();
-        K.UnixAndroid();
-        System.out.println(K);
+        IKernel hybrid = new Kernel("Unix", 2007, 12.3, "intel", "DDR3",2000, Type.HybridKernel);
+        System.out.println(hybrid);
 
 
         System.out.println("\n\t--=Select operating system=-");
 
-        OperationSystem OS1 = new OperationSystem(NameOS.Ubuntu, Type.UnixKernel, 2001);
-        OperationSystem OS2 = new OperationSystem(NameOS.Android, Type.UnixAndroid, 2009);
-        OperationSystem OS3 = new OperationSystem(NameOS.Mint, Type.UnixKernel, 2007);
-
-        ArrayList<OperationSystem> operationSystems = new ArrayList<>();
-        operationSystems.add(OS1);
-        operationSystems.add(OS2);
-        operationSystems.add(OS3);
-
-
-
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите номер OS: " +
-                "\nOS 0" +
-                "\nOS 1" +
-                "\nOS 2");
+        System.out.println("Select number OS: " +
+                "\nOS 0 Ubuntu" +
+                "\nOS 1 Mint " +
+                "\nOS 2 Android");
 
         int id = sc.nextInt();
+        System.out.println("Insert year of OS: ");
 
-        Type type = Type.values()[id];
-        System.out.println("Выбран тип OS " + id);
+        int year = sc.nextInt();
+        NameOS type = NameOS.values()[id];
+        OperationSystem OS = null;
+        try {
+            OS = KernelFabric.getOSForType(type,hybrid,year);
+        } catch (UnsuportedKernelExeption unsuportedKernelExeption) {
+          System.out.println("No Supported kernel");
+        }
 
-        if (OS1.typeKernel == type) {
-            System.out.println("Операциона система: " + OS1.nameOS + "-" + "ядро: " + OS1.typeKernel + "=> совместимы");
-        } else if (OS2.typeKernel == Type.UnixAndroid)
-            System.out.println("Операционаая система: " + OS2.nameOS + "-" + "ядро: " + OS2.typeKernel + "=> совместимы");
-        else if (OS3.typeKernel == Type.UnixKernel)
-            System.out.println("Операционаая система: " + OS3.nameOS + "-" + "ядро: " + OS3.typeKernel + "=> совместимы");
 
-        /*Block for connection Data
-         *
-         * если нет интернет-подключения то автоматически подключается локальной ДБ
-         *
-         * */
+        System.out.println("Selected OS " + id);
+        System.out.println("OS: " + OS);
+
 
 
         CloudStorage CS1 = new CloudStorage(StorageName.Azure, 2000, 100);
