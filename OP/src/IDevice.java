@@ -4,4 +4,5 @@ public interface IDevice {
     void turnOff();
     void click();
 
+
 }

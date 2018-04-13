@@ -1,4 +1,4 @@
-public class TV extends Device implements IDevice {
+public class TV extends Device implements IDevice{
 
     public TV(int id, DeviceType type) {
         super(id, type);
@@ -6,7 +6,7 @@ public class TV extends Device implements IDevice {
 
     @Override
     public void turnOn() {
-        SwitchToFavoriteChannel();
+       SwitchToFavoriteChannel();
     }
 
     @Override
@@ -16,7 +16,7 @@ public class TV extends Device implements IDevice {
 
     @Override
     public void click() {
-
+        TurnOnHdmiPort();
     }
 
 
@@ -28,8 +28,19 @@ public class TV extends Device implements IDevice {
         System.out.println("TV Alarm set! Hike at 6:00 AM");
     }
 
+    private void TurnOnHdmiPort() {
+        System.out.println("Turned the HDMI port");
+    }
+
+
+    private void Turn4kMode(){
+        System.out.println("Turned 4K Mode");
+    }
+
+
     public String toString() {
         return "Television";
     }
+
 
 }

@@ -2,6 +2,7 @@ public enum DeviceType {
 
     Projector,
     TV,
-    SurroundSoundSystem;
+    SurroundSoundSystem,
+    PlayStaion
 
 }

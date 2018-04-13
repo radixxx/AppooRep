@@ -5,23 +5,6 @@ public class SurroundSoundSystem extends Device implements IDevice {
         super(id, type);
     }
 
-    @Override
-    public void turnOn() {
-
-        switchToFavoriteCD();
-        increaseVolume();
-    }
-
-    @Override
-    public void turnOff() {
-
-        decreaseVolume();
-    }
-
-    @Override
-    public void click() {
-
-    }
 
     private void increaseVolume() {
         System.out.println("Volume has increased to a comfortable level on startup");
@@ -39,4 +22,19 @@ public class SurroundSoundSystem extends Device implements IDevice {
         return "Sound System";
     }
 
+
+    @Override
+    public void turnOn() {
+        increaseVolume();
+    }
+
+    @Override
+    public void turnOff() {
+        decreaseVolume();
+    }
+
+    @Override
+    public void click() {
+        switchToFavoriteCD();
+    }
 }

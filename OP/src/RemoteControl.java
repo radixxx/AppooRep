@@ -1,3 +1,4 @@
+
 public class RemoteControl implements IDevice {
 
     private IDevice device = null;
@@ -18,6 +19,30 @@ public class RemoteControl implements IDevice {
 
     public void clickOffButon() {
         this.device.turnOff();
+
+    }
+
+    public void clickHdmiOn(){
+        this.device.click();
+    }
+
+    public void ClickSelectResolution(){
+        this.device.click();
+    }
+
+    public void switchToFavoriteCD(){
+        this.device.click();
+    }
+
+    public void  SelectPlayGames(){
+        this.device.click();
+
+    }
+
+
+    @Override
+    public void click() {
+
     }
 
     @Override
@@ -29,13 +54,8 @@ public class RemoteControl implements IDevice {
     @Override
     public void turnOff() {
 
-
     }
 
-    @Override
-    public void click() {
 
 
-
-    }
 }
