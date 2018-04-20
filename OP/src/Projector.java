@@ -14,11 +14,6 @@ public class Projector extends Device implements IDevice {
         pullDownProjectorScreen();
     }
 
-    @Override
-    public void click() {
-        SelectResolution();
-    }
-    
 
     private void pullDownProjectorScreen(){
         System.out.println("Screen has been lowered for viewing");

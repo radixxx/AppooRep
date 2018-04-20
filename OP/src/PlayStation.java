@@ -28,10 +28,6 @@ public class PlayStation extends Device implements IDevice {
         StopGame();
     }
 
-    @Override
-    public void click() {
-        SelectPlayGames();
-    }
 
     @Override
     public String toString() {

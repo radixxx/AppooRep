@@ -33,8 +33,5 @@ public class SurroundSoundSystem extends Device implements IDevice {
         decreaseVolume();
     }
 
-    @Override
-    public void click() {
-        switchToFavoriteCD();
-    }
+
 }

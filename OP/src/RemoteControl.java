@@ -1,7 +1,9 @@
+import java.util.HashMap;
+import java.util.Map;
 
-public class RemoteControl implements IDevice {
+public class RemoteControl {
 
-    private IDevice device = null;
+    private Map<DeviceType, IDevice> devices = new HashMap();
     private static final RemoteControl instance = new RemoteControl();
 
     public static RemoteControl getInstance() {
@@ -9,53 +11,17 @@ public class RemoteControl implements IDevice {
     }
 
     public void connectToDevice(IDevice device) {
-        this.device = device;
+        this.devices.put(device.getType(), device);
         System.out.println("\tConnected to : " + device);
     }
 
-    public void clickOnButon() {
-        this.device.turnOn();
+    public void clickOnButon(DeviceType type) {
+        this.devices.get(type).turnOn();
     }
 
-    public void clickOffButon() {
-        this.device.turnOff();
+    public void clickOffButon(DeviceType type) {
+        this.devices.get(type).turnOff();
 
     }
-
-    public void clickHdmiOn(){
-        this.device.click();
-    }
-
-    public void ClickSelectResolution(){
-        this.device.click();
-    }
-
-    public void switchToFavoriteCD(){
-        this.device.click();
-    }
-
-    public void  SelectPlayGames(){
-        this.device.click();
-
-    }
-
-
-    @Override
-    public void click() {
-
-    }
-
-    @Override
-    public void turnOn() {
-
-
-    }
-
-    @Override
-    public void turnOff() {
-
-    }
-
-
 
 }
